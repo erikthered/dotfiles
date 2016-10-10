@@ -1,0 +1,10 @@
+{
+	"color_scheme": "Packages/ayu/ayu.tmTheme",
+	"font_face": "Roboto Mono",
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"theme": "ayu.sublime-theme",
+	"ui_separator": false
+}

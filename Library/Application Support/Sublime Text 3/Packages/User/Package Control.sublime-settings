@@ -1,0 +1,13 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"ayu",
+		"Package Control",
+		"Python 3",
+		"TrailingSpaces"
+	]
+}
