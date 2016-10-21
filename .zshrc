@@ -15,3 +15,10 @@ source $ZSH/oh-my-zsh.sh
 
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+export PATH="$HOME/.yarn/bin:$PATH"
+
+for file in ~/.{extra}; do
+    [ -r "$file" ] && source "$file"
+done
+unset file
