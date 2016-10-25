@@ -18,7 +18,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 export PATH="$HOME/.yarn/bin:$PATH"
 
-for file in ~/.{extra}; do
+for file in ~/.extra/*; do
     [ -r "$file" ] && source "$file"
 done
 unset file
