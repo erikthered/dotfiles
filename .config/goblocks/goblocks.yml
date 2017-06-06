@@ -1,0 +1,82 @@
+global:
+    debug: False
+    refresh_interval: 1
+
+blocks:
+    # The key block shows statuses of various toggled keys (caps lock, num lock,
+    # etc.)
+    - type: key
+      update_interval: 60
+      update_signal: 1
+      # The key field is the key name to search for in the "xset q" output.
+      key: Caps Lock
+      # The key-text field is the text to display in the block.
+      key-text: Caps
+      # on-color and off-color indicate which colors to use when the given key
+      # is on or off, respectively.
+      on-color: "#ff0000"
+      off-color: "#222222"
+
+    # The disk block is an aggregate status of overall filesystem usage.
+    - type: disk
+      label: "D: "
+      # filesystems is a map of strings to floating point numbers. The strings
+      # are the filesystems you want to check, and the numbers are the
+      # critical usage percentages for those filesystems.
+      filesystems:
+          /: 90
+          /home: 90
+
+    - type: load
+      label: "L: "
+      crit_load: 4
+
+    # The memory block displays available memory.
+    - type: memory
+      label: "M: "
+      crit_mem: 1
+
+    - type: temperature
+      # cpu_temp_path is the path to the "hwmon" directory of the CPU
+      # temperature info.
+      cpu_temp_path: /sys/devices/platform/coretemp.0/hwmon
+      crit_temp: 60
+
+    - type: interface
+      label: "E: "
+      interface_name: eno1
+      # interface_format is a format string that allows you to specify which
+      # interface info to display. The syntax for this string is described here:
+      # https://golang.org/pkg/text/template/
+      # These are the supported values:
+      # * Status        - whether the interface is up or down
+      # * Ipv4Addr      - IPv4 address
+      # * Ipv4Cidr      - IPv4 address in CIDR notation
+      # * Ipv4LocalAddr - link local IPv4 address
+      # * Ipv4LocalCidr - link local IPv4 address in CIDR notation
+      # * Ipv6Addr      - IPv6 address
+      # * Ipv6Cidr      - IPv6 address in CIDR notation
+      # * Ipv6LocalAddr - link local IPv6 address
+      # * Ipv6LocalCidr - link local IPv6 address in CIDR notation
+      # The default value for interface_format is "{{.Status}}"
+      interface_format: "{{.Status}}, {{.Ipv4Cidr}}"
+
+    # The volume block currently supports Pulse or ALSA channels through amixer.
+    # The amixer utility must be installed and in your $PATH.
+    - type: volume
+      update_interval: 60
+      label: "V: "
+      update_signal: 1
+      # mixer_device defines the device name to use. If omitted, the default
+      # value is "default". Other possible values include "pulse".
+      mixer_device: default
+      # channel defines the volume channel to monitor. If omitted, the default
+      # value is "Master".
+      channel: Master
+
+    - type: time
+      update_interval: 0.5
+      # The time_format value must be a string in Go's standard time format
+      # (see https://golang.org/pkg/time/#pkg-constants).
+      time_format: 2006-01-02 03:04:05PM
+
