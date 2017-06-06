@@ -1,0 +1,35 @@
+# Global gitignore
+
+.~lock.*#
+
+# Mac stuff
+.DS_Store
+
+# Backup
+*.bak
+*.tmp
+*~
+.*.sw*
+
+# Python
+*.pyc
+
+# Archives
+*.7z
+*.jar
+*.war
+*.rar
+*.zip
+*.tgz
+*.gz
+*.bzip
+*.xz
+*.lzma
+*.iso
+*.tar
+*.dmg
+*.xpi
+*.gem
+*.egg
+*.deb
+*.rpm
