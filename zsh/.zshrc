@@ -18,6 +18,8 @@ source /usr/local/opt/zplug/init.zsh
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting"
 
+zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf
+
 zplug "plugins/git", from:oh-my-zsh
 
 zplug "dracula/zsh", as:theme
@@ -31,7 +33,9 @@ if ! zplug check --verbose; then
 fi
 
 # Then, source plugins and add commands to $PATH
-zplug load --verbose
+zplug load
+
+export EDITOR=micro
 
 alias l='exa -alh'
 
