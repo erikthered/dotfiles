@@ -26,6 +26,7 @@ zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting"
 
 zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf
+zplug "junegunn/fzf", use:"shell/*.zsh"
 
 zplug "plugins/git", from:oh-my-zsh
 
@@ -43,6 +44,10 @@ fi
 zplug load
 
 export EDITOR=micro
+
+fh() {
+  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
+}
 
 alias l='exa -alh'
 
