@@ -2,6 +2,8 @@
 HISTFILE=~/.zsh_history
 HISTSIZE=50000
 SAVEHIST=10000
+DISABLE_AUTO_TITLE=true
+
 setopt appendhistory nomatch
 unsetopt autocd beep extendedglob notify
 bindkey -e
@@ -12,6 +14,11 @@ zstyle :compinstall filename '/Users/erik/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+function precmd () {
+  window_title="\033]0;${PWD##*/}\007"
+  echo -ne "$window_title"
+}
 
 source /usr/local/opt/zplug/init.zsh
 
