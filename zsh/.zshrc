@@ -4,7 +4,7 @@ HISTSIZE=50000
 SAVEHIST=10000
 DISABLE_AUTO_TITLE=true
 
-setopt appendhistory nomatch
+setopt share_history
 unsetopt autocd beep extendedglob notify
 bindkey -e
 # End of lines configured by zsh-newuser-install
