@@ -1,58 +1,22 @@
-# Lines configured by zsh-newuser-install
+# History
 HISTFILE=~/.zsh_history
-HISTSIZE=50000
+HISTSIZE=10000
 SAVEHIST=10000
-DISABLE_AUTO_TITLE=true
 
-setopt share_history
-unsetopt autocd beep extendedglob notify
-bindkey -e
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename "$HOME/.zshrc"
-
+# Completion
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
+setopt COMPLETE_ALIASES
 
-function precmd () {
-  window_title="\033]0;${PWD##*/}\007"
-  echo -ne "$window_title"
-}
+# Prompt
+autoload -Uz promptinit
+promptinit
 
-source /usr/local/opt/zplug/init.zsh
+# Variables
+export EDITOR="micro"
 
-zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-syntax-highlighting"
-
-zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf
-zplug "junegunn/fzf", use:"shell/*.zsh"
-
-zplug "plugins/git", from:oh-my-zsh
-
-zplug "dracula/zsh", as:theme
-
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
-# Then, source plugins and add commands to $PATH
-zplug load
-
-export EDITOR=micro
-
-fh() {
-  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
-}
-
+# Aliases
 alias l='exa -alh'
 
-# Shims and other crap
-
-eval "$(rbenv init -)"
-
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+# Plugins
+source <(sheldon source)
