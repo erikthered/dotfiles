@@ -33,3 +33,7 @@
 *.egg
 *.deb
 *.rpm
+
+# Sheldon
+sheldon/.sheldon/repos/
+sheldon/.sheldon/plugins.lock

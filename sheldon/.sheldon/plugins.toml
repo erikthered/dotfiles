@@ -4,7 +4,3 @@ use = ['shell/*.zsh']
 
 [plugins.dracula]
 github = 'dracula/zsh'
-
-[plugins.sdkman]
-local = '~/.sdkman'
-use = ['bin/sdkman-init.sh']
