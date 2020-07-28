@@ -1,6 +1,15 @@
+[templates]
+completions_fpath = 'fpath=( "{{ dir }}/completions" $fpath )'
+
 [plugins.fzf]
 github = 'junegunn/fzf'
 use = ['shell/*.zsh']
 
 [plugins.dracula]
 github = 'dracula/zsh'
+
+[plugins.asdf]
+github = 'asdf-vm/asdf'
+tag = 'v0.7.8'
+use = ['asdf.sh']
+apply = ['source', 'completions_fpath']

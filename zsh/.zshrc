@@ -3,6 +3,9 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
+# Plugins
+source <(sheldon source)
+
 # Completion
 autoload -Uz compinit
 compinit
@@ -17,6 +20,3 @@ export EDITOR="micro"
 
 # Aliases
 alias l='exa -alh'
-
-# Plugins
-source <(sheldon source)
