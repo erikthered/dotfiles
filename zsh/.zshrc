@@ -3,6 +3,9 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
+# Path
+export PATH="$HOME/.cargo/bin:$HOME/.local/bin:$PATH"
+
 # Plugins
 source <(sheldon source)
 
