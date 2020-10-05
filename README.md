@@ -1,7 +1,23 @@
 # Erik's Dotfiles
 
-This is definitely a work in progress. Have chosen to use GNU Stow for management this time.
+I am using GNU Stow to manage my dotfiles and various configuration files. Check out [this article](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html) for the basic process I'm following.
 
-Check out the following article for the basic process I'm following: http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html
+This repository is intended for use with a Linux environment, but should also work with MacOS.
 
-Run the `bootstrap.sh` script to get started. This is currently only functional on MacOS.
+## Prerequisites
+
+- Zsh
+- Rust/Cargo: I highly recommend using [rustup](https://rustup.rs/)
+- [Sheldon](https://github.com/rossmacarthur/sheldon)
+- [micro](https://micro-editor.github.io/)
+- [exa](https://github.com/ogham/exa)
+
+## To-Do's
+
+- [x] replace zplug with [sheldon](https://github.com/rossmacarthur/sheldon)
+- [ ] add more detail to README
+  - [x] prerequisites
+  - [ ] usage
+- [ ] add bootstrap scripts
+  - [ ] ArchLinux
+  - [ ] Ubuntu
