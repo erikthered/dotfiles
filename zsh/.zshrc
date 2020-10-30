@@ -23,3 +23,4 @@ export EDITOR="micro"
 
 # Aliases
 alias l='exa -alh'
+alias gst='git status'
