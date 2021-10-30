@@ -24,3 +24,6 @@ export EDITOR="micro"
 # Aliases
 alias l='exa -alh'
 alias gst='git status'
+
+# Set title to current folder
+precmd () { print -Pn "\e]2;%n@%M | %~\a" }
