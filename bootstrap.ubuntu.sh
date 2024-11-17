@@ -20,7 +20,7 @@ sudo apt -y install \
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # Crates
-cargo install exa sheldon
+cargo install eza sheldon
 
 # SDKMan
 curl -s "https://get.sdkman.io" | bash

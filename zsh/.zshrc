@@ -22,7 +22,7 @@ promptinit
 export EDITOR="micro"
 
 # Aliases
-alias l='exa -alh'
+alias l='eza -alh'
 alias gst='git status'
 
 # Set title to current folder

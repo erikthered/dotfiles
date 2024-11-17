@@ -10,7 +10,7 @@ This repository is intended for use with a Linux environment, but should also wo
 - Rust/Cargo: I highly recommend using [rustup](https://rustup.rs/)
 - [Sheldon](https://github.com/rossmacarthur/sheldon)
 - [micro](https://micro-editor.github.io/)
-- [exa](https://github.com/ogham/exa)
+- [eza](https://github.com/eza-community/eza)
 
 ## To-Do's
 
