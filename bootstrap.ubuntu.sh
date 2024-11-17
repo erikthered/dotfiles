@@ -14,10 +14,12 @@ sudo apt -y install \
     micro \
     curl \
     fzf \
-    zsh
+    zsh \
+    stow
 
 # Rust & Cargo
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source ~/.zshrc
 
 # Crates
 cargo install eza sheldon
