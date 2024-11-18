@@ -3,15 +3,24 @@ shell = 'zsh'
 [templates]
 completions_fpath = 'fpath=( "{{ dir }}/completions" $fpath )'
 
-[plugins.fzf]
-github = 'junegunn/fzf'
-use = ['shell/*.zsh']
-
-[plugins.dracula]
-github = 'dracula/zsh'
-
 [plugins.asdf]
 github = 'asdf-vm/asdf'
 tag = 'v0.14.1'
 use = ['asdf.sh']
 apply = ['source', 'completions_fpath']
+
+[plugins.dracula]
+github = 'dracula/zsh'
+
+[plugins.fzf]
+local = "~/.fzf"
+dir = "bin"
+apply = ["PATH"]
+
+[plugins.fzf-zsh]
+local = "~/.fzf"
+dir = "shell"
+use = [
+    "completion.zsh",
+    "key-bindings.zsh",
+]
